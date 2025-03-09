@@ -8,7 +8,7 @@ import 'screens/vendor/vendor_home_screen.dart';
 import 'models/user_type.dart';
 
 void main() async {
- WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   await NotificationService().initialize();
   runApp(const MyApp());
@@ -51,10 +51,12 @@ class MyApp extends StatelessWidget {
                 return const PhoneAuthScreen();
               }
 
-              final userData = userSnapshot.data!.data() as Map<String, dynamic>;
-              final userType = userData['userType'] == UserType.vendor.toString()
-                  ? UserType.vendor
-                  : UserType.customer;
+              final userData =
+                  userSnapshot.data!.data() as Map<String, dynamic>;
+              final userType =
+                  userData['userType'] == UserType.vendor.toString()
+                      ? UserType.vendor
+                      : UserType.customer;
 
               return userType == UserType.vendor
                   ? const VendorHomeScreen()
