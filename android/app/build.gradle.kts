@@ -1,21 +1,19 @@
 plugins {
     id("com.android.application")
     id("kotlin-android")
-    id("com.google.gms.google-services")  // Add this line
+    id("com.google.gms.google-services")
 }
 
 android {
-    namespace = "com.example.qr_order_app"  // Your package name
+    namespace = "com.example.qr_order_app"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.example.qr_order_app"  // Your package name
+        applicationId = "com.example.qr_order_app"
         minSdk = 21
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -39,5 +37,4 @@ android {
 dependencies {
     implementation(platform("com.google.firebase:firebase-bom:32.2.2"))
     implementation("com.google.firebase:firebase-analytics-ktx")
-    // Other dependencies...
 }
